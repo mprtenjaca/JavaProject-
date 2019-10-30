@@ -1,0 +1,31 @@
+2019-10-29 23:45:31,137 INFO [main] h.j.v.g.Glavna [Glavna.java:38] Program se pocinje izvoditi
+2019-10-29 23:46:35,916 ERROR [main] h.j.v.g.Glavna [Automobil.java:81] Pogreška prilikom odre?ivanja cijene osiguranja!
+2019-10-29 23:46:35,921 ERROR [main] h.j.v.g.Glavna [Automobil.java:82] Previše kw, ne mogu odrediti grupu osiguranja.
+hr.java.vjezbe.iznimke.NemoguceOdreditiGrupuOsiguranjaException: Previše kw, ne mogu odrediti grupu osiguranja.
+	at hr.java.vjezbe.entitet.Automobil.izracunajGrupuOsiguranja(Automobil.java:54)
+	at hr.java.vjezbe.entitet.Automobil.tekstOglasa(Automobil.java:75)
+	at hr.java.vjezbe.glavna.Glavna.ispis(Glavna.java:83)
+	at hr.java.vjezbe.glavna.Glavna.main(Glavna.java:63)
+2019-10-29 23:46:35,923 ERROR [main] h.j.v.e.Nekretnina [Nekretnina.java:25] Pogreška prilikom odre?ivanja iznosa poreza!
+2019-10-29 23:46:35,923 ERROR [main] h.j.v.g.Glavna [Stan.java:48] Cijena ne smije biti manja od 10000kn
+hr.java.vjezbe.iznimke.CijenaJePreniskaException: Cijena ne smije biti manja od 10000kn
+	at hr.java.vjezbe.entitet.Nekretnina.izracunajPorez(Nekretnina.java:26)
+	at hr.java.vjezbe.entitet.Stan.tekstOglasa(Stan.java:42)
+	at hr.java.vjezbe.glavna.Glavna.ispis(Glavna.java:83)
+	at hr.java.vjezbe.glavna.Glavna.main(Glavna.java:63)
+2019-10-30 00:00:00,047 INFO [main] h.j.v.g.Glavna [Glavna.java:38] Program se pocinje izvoditi
+2019-10-30 00:13:25,632 INFO [main] h.j.v.g.Glavna [Glavna.java:38] Program se pocinje izvoditi
+2019-10-30 00:13:48,603 INFO [main] h.j.v.g.Glavna [Glavna.java:38] Program se pocinje izvoditi
+2019-10-30 00:14:09,520 INFO [main] h.j.v.g.Glavna [Glavna.java:38] Program se pocinje izvoditi
+2019-10-30 00:14:36,834 INFO [main] h.j.v.g.Glavna [Glavna.java:38] Program se pocinje izvoditi
+2019-10-30 00:24:46,823 INFO [main] h.j.v.g.Glavna [Glavna.java:38] Program se pocinje izvoditi
+2019-10-30 00:24:49,160 ERROR [main] h.j.v.g.Glavna [Glavna.java:104] Pogreška prilikom unosa int tipa podatka!
+java.util.InputMismatchException: null
+	at java.base/java.util.Scanner.throwFor(Scanner.java:939)
+	at java.base/java.util.Scanner.next(Scanner.java:1594)
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2258)
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2212)
+	at hr.java.vjezbe.glavna.Glavna.unosInt(Glavna.java:101)
+	at hr.java.vjezbe.glavna.Glavna.unosKorisnika(Glavna.java:355)
+	at hr.java.vjezbe.glavna.Glavna.main(Glavna.java:46)
+2019-10-30 00:30:44,470 INFO [main] h.j.v.g.Glavna [Glavna.java:38] Program se pocinje izvoditi

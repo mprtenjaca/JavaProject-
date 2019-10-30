@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"hr.java.vjezbe.iznimke","l":"CijenaJePreniskaException"},{"p":"hr.java.vjezbe.glavna","l":"Glavna"},{"p":"hr.java.vjezbe.iznimke","l":"NemoguceOdreditiGrupuOsiguranjaException"},{"p":"hr.java.vjezbe.entitet","l":"PrivatniKorisnik"}]
