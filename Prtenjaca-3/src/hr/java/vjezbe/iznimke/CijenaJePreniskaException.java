@@ -3,6 +3,11 @@ package hr.java.vjezbe.iznimke;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Klasa neoznacene iznimke CijenaJePreniskaException za obradu iznimke o cijeni osiguranja
+ * @author Marko Prtenjaca
+ * @version 1.0
+ */
 public class CijenaJePreniskaException extends RuntimeException {
 
 	private static final Logger logger = LoggerFactory.getLogger(CijenaJePreniskaException.class);

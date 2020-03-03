@@ -16,7 +16,7 @@ public interface Vozilo {
 		BigDecimal tempGrupa = izracunajGrupuOsiguranja();
 		int value = tempGrupa.intValue();
 
-		@SuppressWarnings("preview")
+		
 		int tempResult = 0;
 		
 		switch (value) {

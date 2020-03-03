@@ -4,10 +4,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- *klasa iznimka ako je nemoguce odrediti prosjek studenata zbog nedovoljne ocjene
+ * Oznacena klasa NemoguceOdreditiGrupuOsiguranjaException koja se poziva kada je nemoguce odrediti grupu osiguranja
  * 
  * @author Marko Prtenjaca
- *
+ * @version 1.0
  */
 
 public class NemoguceOdreditiGrupuOsiguranjaException extends Exception {

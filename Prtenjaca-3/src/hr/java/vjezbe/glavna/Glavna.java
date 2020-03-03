@@ -1,4 +1,5 @@
 package hr.java.vjezbe.glavna;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -19,18 +20,21 @@ import hr.java.vjezbe.entitet.Stan;
 import hr.java.vjezbe.entitet.Usluga;
 
 /**
- * Glavna klasa u kojoj se sve implementira 
+ * Glavna klasa u kojoj se sve implementira
+ * 
  * @author Marko Prtenjaca
- *
+ * @version 1.0
  */
 public class Glavna {
-	
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(Glavna.class);
 
 	/**
 	 * Poziva se main funkcija
+	 * 
 	 * @param args - argumenti
+	 * @throws NeispravnaProdajaException 
+	 * @throws DuplaProdajaException 
 	 */
 	public static void main(String[] args) {
 
@@ -45,7 +49,7 @@ public class Glavna {
 		for (int i = 0; i < brojKorisnika; i++) {
 			korisnik[i] = unosKorisnika(unos, brojKorisnika, i);
 		}
-		
+
 		System.out.print("Unesite broj kategorija koji želite unijeti: ");
 		Integer brojKategorija = unosInt(unos);
 		unos.nextLine();
@@ -59,37 +63,34 @@ public class Glavna {
 		Integer artikliNaProdaju = unosInt(unos);
 		Prodaja[] prodaja = new Prodaja[artikliNaProdaju];
 		unesiArtiklezaProdaju(unos, prodaja, korisnik, kategorija);
-
 		ispis(prodaja);
-		
+
 		unos.close();
 
 	}
-	
-	
 
 	/**
 	 * Ispis artikala koji su spremni za prodaju
+	 * 
 	 * @param prodaja - Vraca podatke o artiklima za prodaju
 	 */
 	public static void ispis(Prodaja[] prodaja) {
 		System.out.println("Trenutno su oglasi na prodaju:");
 		System.out.println("--------------------------------------------------------------------------------");
-		
+
 		LocalDate datum = LocalDate.now();
 		String formattedDate = datum.format(DateTimeFormatter.ofPattern("dd.MM.yyyy."));
-		
+
 		for (int i = 0; i < prodaja.length; i++) {
-			System.out.println(prodaja[i].getArtikl().tekstOglasa() 
-					+ "\n" + prodaja[i].getKorisnik().dohvatiKontakt()
-					+ "\n" + "Datum objave: " 
-					+ formattedDate);
+			System.out.println(prodaja[i].getArtikl().tekstOglasa() + "\n" + prodaja[i].getKorisnik().dohvatiKontakt()
+					+ "\n" + "Datum objave: " + formattedDate);
 			System.out.println("--------------------------------------------------------------------------------");
 		}
 	}
-	
+
 	/**
 	 * Unos svih Integer varijabli
+	 * 
 	 * @param unos - Unos podataka s tipkovnice
 	 * @return - Vraca uneseni Integer
 	 */
@@ -99,19 +100,20 @@ public class Glavna {
 		do {
 			try {
 				unosBroja = unos.nextInt();
-				ispravno=true;
-			}catch(InputMismatchException e) {
+				ispravno = true;
+			} catch (InputMismatchException e) {
 				logger.error("Pogreška prilikom unosa int tipa podatka!", e);
 				System.out.println("Neispravan unos!\nUnesite ponovno: ");
 				unos.nextLine();
 			}
-		}while(ispravno == false);
-		
+		} while (ispravno == false);
+
 		return unosBroja;
 	}
-	
+
 	/**
 	 * Unos svih BigDecimal varijabli
+	 * 
 	 * @param unos - Unos podataka s tipkovnice
 	 * @return - Vraca uneseni BigDecimal
 	 */
@@ -121,25 +123,29 @@ public class Glavna {
 		do {
 			try {
 				unosBroja = unos.nextBigDecimal();
-				ispravno=true;
-			}catch(InputMismatchException e) {
+				ispravno = true;
+			} catch (InputMismatchException e) {
 				logger.error("Pogreška prilikom unosa BigDecimal tipa podatka!", e);
 				System.out.println("Neispravan unos!\nUnesite ponovno: ");
 			}
-		}while(ispravno == false);
-		
+		} while (ispravno == false);
+
 		return unosBroja;
 	}
 
 	/**
 	 * Odabir artikala koji su spremni za prodaju
-	 * @param unos - Unos podataka s tipkovnice
-	 * @param prodaja - polje prodaje koje sadrzi podatke o korisniku, kategoriji i artiklima
-	 * @param korisnik - polje odabranih korisnika
+	 * 
+	 * @param unos       - Unos podataka s tipkovnice
+	 * @param prodaja    - polje prodaje koje sadrzi podatke o korisniku, kategoriji
+	 *                   i artiklima
+	 * @param korisnik   - polje odabranih korisnika
 	 * @param kategorija - polje odabranih kategorija
 	 */
 	public static void unesiArtiklezaProdaju(Scanner unos, Prodaja[] prodaja, Korisnik[] korisnik,
 			Kategorija[] kategorija) {
+		
+		
 
 		for (int i = 0; i < prodaja.length; i++) {
 			System.out.println("Odaberite korisnika: ");
@@ -169,16 +175,19 @@ public class Glavna {
 			LocalDate datum = LocalDate.now();
 			prodaja[i] = new Prodaja(kategorija[odabirKategorije - 1].getArtikli()[odabirArtikla - 1],
 					korisnik[odabirKorisnika - 1], datum);
+			
 		}
 	}
-	
+
 	/**
 	 * Unosi podatke o stanu
+	 * 
 	 * @param unos - Unos podataka s tipkovnice
-	 * @param j - Index odredenog stana
+	 * @param j    - Index odredenog stana
 	 * @return - Vraca novi stan odredenog indexa
+	 * @throws NeispravnaProdajaException 
 	 */
-	public static Stan unosStana(Scanner unos, int j) {
+	public static Stan unosStana(Scanner unos, int j){
 		System.out.print("Unesite naslov " + (j + 1) + " oglasa stana: ");
 		String naslovArtikla = unos.nextLine();
 		System.out.print("Unesite opis " + (j + 1) + " oglasa stana: ");
@@ -188,19 +197,21 @@ public class Glavna {
 		System.out.print("Unesite cijenu " + (j + 1) + " oglasa stana: ");
 		BigDecimal cijena = unosBD(unos);
 		unos.nextLine();
-		
+
 		Stan noviStan = new Stan(naslovArtikla, opisArtikla, cijena, kvadratura);
 
 		return noviStan;
 	}
-	
+
 	/**
 	 * Unosi podatke o automobilu
+	 * 
 	 * @param unos - Unos podataka s tipkovnice
-	 * @param j - Index odredenog automobila
+	 * @param j    - Index odredenog automobila
 	 * @return - Vraca novog studenta odredenog indexa
 	 */
 	public static Automobil unosAutomobila(Scanner unos, Integer j) {
+		
 		System.out.print("Unesite naslov " + (j + 1) + " oglasa automobila: ");
 		String naslovArtikla = unos.nextLine();
 		System.out.print("Unesite opis " + (j + 1) + " oglasa automobila: ");
@@ -219,9 +230,11 @@ public class Glavna {
 
 	/**
 	 * Unosi podatke o usluzi
+	 * 
 	 * @param unos - Unos podataka s tipkovnice
-	 * @param j - Index odredene usluge
+	 * @param j    - Index odredene usluge
 	 * @return - Vraca novu uslugu odredenog indexa
+	 * @throws NeispravnaProdajaException 
 	 */
 	public static Usluga unosUsluge(Scanner unos, Integer j) {
 		System.out.print("Unesite naslov " + (j + 1) + " oglasa usluge: ");
@@ -231,7 +244,7 @@ public class Glavna {
 		System.out.print("Unesite cijenu " + (j + 1) + " oglasa usluge: ");
 		BigDecimal cijena = unosBD(unos);
 		unos.nextLine();
-		
+
 		Usluga novaUsluga = new Usluga(naslovArtikla, opisArtikla, cijena);
 
 		return novaUsluga;
@@ -239,9 +252,11 @@ public class Glavna {
 
 	/**
 	 * Unosi podatke o kategoriji
+	 * 
 	 * @param unos - Unos podataka s tipkovnice
-	 * @param i - Index odredene kategorije
+	 * @param i    - Index odredene kategorije
 	 * @return - Vraca novu kategoriju odredenog indexa
+	 * @throws NeispravnaProdajaException 
 	 */
 	public static Kategorija unsoKategorije(Scanner unos, Integer i) {
 
@@ -272,10 +287,11 @@ public class Glavna {
 				usluga[j] = unosUsluge(unos, j);
 				poljeArtikala[j] = usluga[j];
 
-			}if(odabirVrsteArtikla == 2) {
+			}
+			if (odabirVrsteArtikla == 2) {
 				automobil[j] = unosAutomobila(unos, j);
 				poljeArtikala[j] = automobil[j];
-			}else {
+			} else {
 				stan[j] = unosStana(unos, j);
 				poljeArtikala[j] = stan[j];
 			}
@@ -288,8 +304,9 @@ public class Glavna {
 
 	/**
 	 * Unosi podatke o poslovnom korisniku
+	 * 
 	 * @param unos - Unos podataka s tipkovnice
-	 * @param i - Index odredenog poslovnog korisnika
+	 * @param i    - Index odredenog poslovnog korisnika
 	 * @return - Vraca novog poslovnog korisnika odredenog indexa
 	 */
 	public static PoslovniKorisnik unosPoslovnogKorisnika(Scanner unos, int i) {
@@ -313,8 +330,9 @@ public class Glavna {
 
 	/**
 	 * Unosi podatke o privatnom korisniku
+	 * 
 	 * @param unos - Unos podataka s tipkovnice
-	 * @param i - Index odredenog privatnog korisnika
+	 * @param i    - Index odredenog privatnog korisnika
 	 * @return - Vraca novog privatnog korisnika odredenog indexa
 	 */
 	public static PrivatniKorisnik unosPrivatnogKorisnika(Scanner unos, int i) {
@@ -338,9 +356,10 @@ public class Glavna {
 
 	/**
 	 * unosi podatke o korisniku
-	 * @param unos - Unos podataka s tipkovnice
+	 * 
+	 * @param unos          - Unos podataka s tipkovnice
 	 * @param brojKorisnika - Broj odabranih korisnika
-	 * @param i - Index odredenog korisnika
+	 * @param i             - Index odredenog korisnika
 	 * @return - Vraca novog korisnika
 	 */
 	public static Korisnik unosKorisnika(Scanner unos, int brojKorisnika, int i) {

@@ -2,6 +2,11 @@ package hr.java.vjezbe.entitet;
 
 import java.time.LocalDate;
 
+/**
+ * Klasa Prodaja koja sadrzi podatke o artiklima koji su na prodaju
+ * @author Marko Prtenjaca
+ * @version 1.0
+ */
 public class Prodaja {
 	
 	Artikl artikl;

@@ -1,0 +1,49 @@
+2
+1
+BMW
+BMW M5
+625
+1100000
+IZVRSNO
+2
+2
+BMW
+BMW 320d
+190
+350000
+NOVO
+2
+3
+Alfa Romeo
+Alfa Romeo 147 skoro ispravna, savrseno stanje
+150
+20000
+NEISPRAVNO
+2
+4
+Peugeot 307
+307, savrseno stanje
+150
+20000
+NOVO
+2
+7
+AUDI
+TT
+250
+15000
+NOVO
+2
+7
+LADANOVA
+mala
+22
+123123
+IZVRSNO
+2
+7
+MERCEDES
+a1
+200
+123123123123
+RABLJENO

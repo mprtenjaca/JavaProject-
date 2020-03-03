@@ -4,8 +4,8 @@ import java.math.BigDecimal;
 
 /**
  * Klasa artikl koja sadrzi podatke o artiklima koji se prodaju
- * @author Marko
- *
+ * @author Marko Prtenjaca
+ * @version 1.0
  */
 public abstract class Artikl {
 	

@@ -8,6 +8,11 @@ import org.slf4j.LoggerFactory;
 import hr.java.vjezbe.glavna.Glavna;
 import hr.java.vjezbe.iznimke.CijenaJePreniskaException;
 
+/**
+ * Klasa Stan koja nasljeduje klasu Artikl i implemetira sucelje Nekretnina
+ * @author Marko Prtenjaca
+ * @version 1.0
+ */
 public class Stan extends Artikl implements Nekretnina {
 
 	private static final Logger logger = LoggerFactory.getLogger(Glavna.class);

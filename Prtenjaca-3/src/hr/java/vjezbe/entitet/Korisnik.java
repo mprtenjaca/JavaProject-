@@ -1,5 +1,10 @@
 package hr.java.vjezbe.entitet;
 
+/**
+ * Klasa Korisnik koja sadrzi podatke o korisniku 
+ * @author Marko Prtenjaca
+ *  @version 1.0
+ */
 public abstract class Korisnik {
 
 	private String email;

@@ -1,5 +1,10 @@
 package hr.java.vjezbe.entitet;
 
+/**
+ * Klasa kategorija za svaki artikl
+ * @author Marko Prtenjaca
+ *  @version 1.0
+ */
 public class Kategorija {
 	
 	private String naziv;

@@ -2,6 +2,11 @@ package hr.java.vjezbe.entitet;
 
 import java.math.BigDecimal;
 
+/**
+ * Klasa Usluga koja nasljeduje klasu Artikl
+ * @author Marko Prtenjaca
+ * @version 1.0
+ */
 public class Usluga extends Artikl {
 
 	/**

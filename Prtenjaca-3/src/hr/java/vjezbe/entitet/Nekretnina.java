@@ -7,6 +7,11 @@ import org.slf4j.LoggerFactory;
 
 import hr.java.vjezbe.iznimke.CijenaJePreniskaException;
 
+/**
+ * Sucelje Nekretnina koja sluzi za izracunavanje poreza na nkretninu 
+ * @author Marko Prtenjaca
+ * @version 1.0
+ */
 public interface Nekretnina {
 	
 	static final Logger logger = LoggerFactory.getLogger(Nekretnina.class);

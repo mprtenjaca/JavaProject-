@@ -8,6 +8,11 @@ import org.slf4j.LoggerFactory;
 import hr.java.vjezbe.glavna.Glavna;
 import hr.java.vjezbe.iznimke.NemoguceOdreditiGrupuOsiguranjaException;
 
+/**
+ * Klasa Automobil koja sadrzi podatke o automobililma, nasljeduje klasu artikl i implementira sucelje Vozilo
+ * @author Marko Prtenjaca
+ * @version 1.0
+ */
 public class Automobil extends Artikl implements Vozilo {
 	private static final Logger logger = LoggerFactory.getLogger(Glavna.class);
 

@@ -1,0 +1,10 @@
+package hr.java.vjezbe
+
+import javafx.scene.layout.BorderPane
+import hr.java.vjezbe.PrtenjacaController
+
+component Prtenjaca controlledby PrtenjacaController {
+	BorderPane {
+		//TODO Add Nodes
+	}
+}

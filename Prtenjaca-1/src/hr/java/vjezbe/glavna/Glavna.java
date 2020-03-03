@@ -15,6 +15,8 @@ public class Glavna {
 	public static void main(String[] args) {
 
 		Scanner unos = new Scanner(System.in);
+		
+		System.out.println("Ja sam marko");
 
 		System.out.print("Unesite broj korisnika koji želite unijeti: ");
 		Integer brojKorisnika = unos.nextInt();

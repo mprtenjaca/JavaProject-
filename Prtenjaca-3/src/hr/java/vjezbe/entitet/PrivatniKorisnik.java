@@ -1,5 +1,10 @@
 package hr.java.vjezbe.entitet;
 
+/**
+ * Klasa Prtivatni Korisnik koji nasljeduje klasu Korisnik
+ * @author Marko Prtenjaca
+ *  @version 1.0
+ */
 public class PrivatniKorisnik extends Korisnik {
 
 	public String ime;
