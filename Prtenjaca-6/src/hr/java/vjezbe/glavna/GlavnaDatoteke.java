@@ -45,6 +45,7 @@ public class GlavnaDatoteke {
 	/**
 	 * Glavna main metoda koja sadrzi svu implementaciju
 	 * 
+	 * 
 	 * @param args Polje argumenata komandne linije za aplikaciju
 	 */
 	public static void main(String[] args) {
