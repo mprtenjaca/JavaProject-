@@ -1,3 +1,3 @@
 # JavaProject
 
-###Using files to display available products
+### Using files to display available products
